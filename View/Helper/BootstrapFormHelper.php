@@ -230,7 +230,7 @@ class BootstrapFormHelper extends FormHelper {
 			$options['state'] = 'error';
 			$help_block = $this->Html->tag(
 				"span",
-				$this->error($options['field']),
+				$this->error($options['field'], null, array('wrap' => false)),
 				array("class" => "help-block")
 			);
 		}
@@ -347,7 +347,7 @@ class BootstrapFormHelper extends FormHelper {
 	 * @access public
 	 * @return string
 	 */
-	public function radio($field, $options = array()) {
+	public function radio($field, $options = array(), $attributes = array()) {
 		if (is_array($field)) {
 			$options = $field;
 		} else {
